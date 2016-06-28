@@ -10,30 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627211638) do
+ActiveRecord::Schema.define(version: 20160628003924) do
 
-  create_table "customers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "about"
-    t.string   "email"
-    t.integer  "balance"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "employees", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "time_entries", force: :cascade do |t|
+  create_table "account_entries", force: :cascade do |t|
     t.float    "time"
     t.integer  "customer_id"
     t.integer  "employee_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "account_id"
+  end
+
+  create_table "accounts", force: :cascade do |t|
+    t.string   "type"
+    t.string   "name"
+    t.string   "email"
+    t.string   "about"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

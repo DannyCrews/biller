@@ -1,4 +1,3 @@
-class TimeEntry < ApplicationRecord
-  belongs_to :customer
+class TimeEntry < AccountEntry
   belongs_to :employee
 end
